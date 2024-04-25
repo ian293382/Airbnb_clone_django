@@ -14,11 +14,12 @@
 + Landlord page (static)  [v]
 + My reservation (static) [v]
 + My properties (static) [v]
-+ Inbox page  (static)
-+ Detail page for chat (static)
-+ User menu popup
-+ Create reusable modal window
-+ Log in model  (remember error codes) exception design
++ Inbox page  (static) [v]
++ Detail page for chat (static) [v]
++ User menu popup [v]
++ Create reusable modal window [v]
++ Log in model  (remember error codes) exception design [v]
+    => npm install zustand 
 + Sign up model  (remember error codes)
 
 ### backend
