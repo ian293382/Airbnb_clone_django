@@ -4,6 +4,7 @@ import { useState } from 'react'; // store state it as a temporary variable
 import MenuLink from './MenuLink';
 
 import useLoginModel from '@/app/hooks/useLoginModel';
+import useSignupModel from '@/app/hooks/useSignupModel';
 
 const UserNav = () => {
     // isOpen 是狀態改變 Boolean  setIsOpen 是函式用來改變 isOpen狀態
@@ -11,6 +12,7 @@ const UserNav = () => {
 
     // import userlogin
     const loginModel = useLoginModel();
+    const signupModel = useSignupModel();
     return (
         <div className="p-2 relative inline-block border rounded-full">
             <button
@@ -39,7 +41,10 @@ const UserNav = () => {
                     />
                     <MenuLink 
                         label="sign up"
-                        onClink={()=> console.log('clicked')}
+                        onClink={()=> {
+                            setIsOpen(false);
+                            signupModel.open()
+                        }}
                     />
                 </div>
             )}
