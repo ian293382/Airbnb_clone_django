@@ -6,13 +6,14 @@
 
 ### front end
 
-+ Install and set up Next.js create project
-+ Code for nav bar 
-+ Categories on the front page
-+ List properties on the front page (static)
-+ Details page for properties (static)
-+ Landlord page (static)
-+ My properties  (static)
++ Install and set up Next.js create project [v]
++ Code for nav bar [v]
++ Categories on the front page [v]
++ List properties on the front page (static) [v]
++ Details page for properties (static)  [v]
++ Landlord page (static)  [v]
++ My reservation (static) [v]
++ My properties (static) [v]
 + Inbox page  (static)
 + Detail page for chat (static)
 + User menu popup
@@ -34,7 +35,7 @@
     + Sign up
     + Log out
 
-+ Add properties from nextjs
+* Add properties from nextjs
     + create model
     + APi endpoints
     + Send data
