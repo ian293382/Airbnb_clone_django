@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
+import Model from "./components/model/Model";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const content = (
+    <p>this is working</p>
+  ) 
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -23,7 +28,12 @@ export default function RootLayout({
         <div className="pt-32">
           {children}
         </div>
-
+    <Model 
+      label="model test"
+      content={content}
+      isOpen={false}
+      close={close}
+    />
     </body>
     </html>
   );
