@@ -24,10 +24,10 @@
 
 ### backend
 
-+ Set up docker for django with postgresql, etc
-    + Install DRF, cor headers, serializer,etc. 
-+ Create user model / config
-+ Create app for properties
++ Set up docker for django with postgresql, etc  [v]
+    + Install DRF, cor headers, serializer,etc.   [v]
++ Create user model / config  [v]
++ Create app for properties 
 + Create model and serializer for properties
 + Get properties in the front end and list then 
 
