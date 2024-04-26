@@ -14,6 +14,7 @@ then
 fi
 
 # 執行 Django 遷移
+python manage.py makemigrations
 python manage.py migrate
 
 # 執行傳遞給腳本的命令
