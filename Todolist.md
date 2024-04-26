@@ -20,7 +20,7 @@
 + Create reusable modal window [v]
 + Log in model  (remember error codes) exception design [v]
     => npm install zustand 
-+ Sign up model  (remember error codes)
++ Sign up model  (remember error codes)  [v]
 
 ### backend
 
