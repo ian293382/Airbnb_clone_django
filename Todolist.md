@@ -29,7 +29,7 @@
 + Create user model / config  [v]
 + Create app for properties [v]
 + Create model and serializer for properties  [v]
-+ Get properties in the front end and list then  
++ Get properties in the front end and list then   [v]
 
 + Implement authentication
     + Log in
