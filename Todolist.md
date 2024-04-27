@@ -28,8 +28,8 @@
     + Install DRF, cor headers, serializer,etc.   [v]
 + Create user model / config  [v]
 + Create app for properties [v]
-+ Create model and serializer for properties
-+ Get properties in the front end and list then 
++ Create model and serializer for properties  [v]
++ Get properties in the front end and list then  
 
 + Implement authentication
     + Log in
