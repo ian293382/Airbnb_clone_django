@@ -20,14 +20,14 @@
 + Create reusable modal window [v]
 + Log in model  (remember error codes) exception design [v]
     => npm install zustand 
-+ Sign up model  (remember error codes)
++ Sign up model  (remember error codes)  [v]
 
 ### backend
 
-+ Set up docker for django with postgresql, etc
-    + Install DRF, cor headers, serializer,etc. 
-+ Create user model / config
-+ Create app for properties
++ Set up docker for django with postgresql, etc  [v]
+    + Install DRF, cor headers, serializer,etc.   [v]
++ Create user model / config  [v]
++ Create app for properties [v]
 + Create model and serializer for properties
 + Get properties in the front end and list then 
 
