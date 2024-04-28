@@ -14,14 +14,22 @@ const  AddPropertyModel = () => {
     const addPropertymodel =  useAddPropertyModel();
     const content = (
         <>
-            <h2 className="mb-6 text-2xl">Choose category </h2>
+            {currentStep == 1? (
+                <>
+                    <h2 className="mb-6 text-2xl">Choose category </h2>
 
-            <CustomButton
-                label="Next"
-                onClick={() => 
-                    setCurrentStep(2)
-                }
-            />
+                    <CustomButton
+                        label="Next"
+                        onClick={() => 
+                            setCurrentStep(2)
+                        }
+                    />
+                </>
+
+            ) : (
+                <p>step 2</p>
+            )}  
+        
         </>
     )
     return(
