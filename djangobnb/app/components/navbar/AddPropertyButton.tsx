@@ -1,11 +1,25 @@
 'use client';
 import useAddPropertyModel from "@/app/hooks/useAddPropertyModel";
+import useLoginModel from "@/app/hooks/useLoginModel";
 
-const AddPropertyButton = () => {
+// 為了驗證近來資料 要做interface => 下面函數要改成
+interface AddPropertyButtonProps {
+    userId?: string| null;
+}
+
+const AddPropertyButton: React.FC<AddPropertyButtonProps> =({
+    userId
+}) => {
+    const loginModel = useLoginModel();
     const addPropertyModel = useAddPropertyModel();
 
     const airbnbYourHome =  () => {
-        addPropertyModel.open()
+        if (userId) {
+            addPropertyModel.open();
+        } else {
+            loginModel.open();
+        }
+    
     }
     return (
         <div 
