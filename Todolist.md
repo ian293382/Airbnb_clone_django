@@ -28,13 +28,13 @@
     + Install DRF, cor headers, serializer,etc.   [v]
 + Create user model / config  [v]
 + Create app for properties [v]
-+ Create model and serializer for properties
-+ Get properties in the front end and list then 
++ Create model and serializer for properties  [v]
++ Get properties in the front end and list then   [v]
 
-+ Implement authentication
-    + Log in
-    + Sign up
-    + Log out
++ Implement authentication [v]
+    + Log in [v]
+    + Sign up [v]
+    + Log out [v]
 
 * Add properties from nextjs
     + create model
