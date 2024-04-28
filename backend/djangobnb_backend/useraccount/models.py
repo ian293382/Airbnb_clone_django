@@ -1,7 +1,6 @@
 from typing import Any
 import uuid
 
-
 from django.conf import settings
 # 使用UserManager => user = User.objects.get(pk=1) 擁有primary key user 資料紀錄
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
