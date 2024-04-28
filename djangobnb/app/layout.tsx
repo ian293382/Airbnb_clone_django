@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import LoginModel from "./components/model/LoginModel";
 import SignupModel from "./components/model/SignupModel";
+import AddPropertyModel from "./components/model/AddPropertyModel"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         </div>
       <LoginModel />
       <SignupModel />
+      <AddPropertyModel />
     </body>
     </html>
   );
