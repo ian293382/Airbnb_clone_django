@@ -13,6 +13,7 @@ const PropertyListItem: React.FC<PropertyProps> = ({
             <div className="relative overflow-hidden aspect-square rounded-xl">
                 <Image 
                     fill 
+                    priority={true} 
                     src={property.image_url}
                     alt="arctic_1"
                     sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"

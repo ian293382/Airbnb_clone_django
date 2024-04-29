@@ -17,6 +17,7 @@ const Navbar = async () => {
                 <div className="flex justify-between items-center">
                     <Link href="/">
                         <Image
+                            priority={true} 
                             src="/airbnb-logo.png"
                             alt="DjangoBnb logo"
                             width={180}

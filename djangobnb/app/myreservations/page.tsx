@@ -41,6 +41,7 @@ const MyReservationsPage = () => {
                                     src="/arctic_1.jpg"
                                     className="hover:scale-110  object-cover transition h-full w-full"
                                     alt="arctic_1"
+                                    priority={true} 
                                 />
                         </div>
                     </div>
