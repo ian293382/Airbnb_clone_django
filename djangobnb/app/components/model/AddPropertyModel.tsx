@@ -87,11 +87,10 @@ const AddPropertyModel = () => {
             } else {
                 console.log('Error');
 
-                const tmpErrors: string[] = Object.values(response).map((error: any) => {
+                const tmpErrors: string[] = Object.values(response).map((error: any) =>{
                     return error;
                 })
-
-                setErrors(tmpErrors)
+                setErrors(tmpErrors);
             }
         }
     }
@@ -261,7 +260,15 @@ const AddPropertyModel = () => {
                             </div>
                         )}
                     </div> 
-                    
+                    {errors.map((error, index) => {
+                        return (
+                            <div
+                                key={index} 
+                                className="p-5 mb-4 bg-airbnb text-white rounded-xl opacity-80">
+                                {error}    
+                            </div>
+                        )
+                    })}
                     <CustomButton
                         label='Previous'
                         className='mb-2 bg-black hover:bg-gray-800'

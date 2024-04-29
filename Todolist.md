@@ -36,12 +36,12 @@
     + Sign up [v]
     + Log out [v]
 
-* Add properties from next.js
-    + create model
-        +  npm Install react-select 
-        +  npm install world-countries
-    + APi endpoints
-    + Send data
+* Add properties from next.js [v]
+    + create model  [v]
+        +  npm Install react-select  [v]
+        +  npm install world-countries [v]
+    + APi endpoints [v]
+    + Send data  [v]
 
 + Detail page for properties
 + Book property
