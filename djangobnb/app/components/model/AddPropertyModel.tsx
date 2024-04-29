@@ -14,82 +14,87 @@ import SelectCountry, {  SelectCountryValue } from "../forms/SelectCountry";
 import apiService from "@/app/services/apiService";
 import { useRouter } from "next/navigation"
 
-const  AddPropertyModel = () => {
+const AddPropertyModel = () => {
     //
-    //  State 設計新增步驟 int step=1
+    // States
+
     const [currentStep, setCurrentStep] = useState(1);
+    const [errors, setErrors] = useState<string[]>([]);
     const [dataCategory, setDataCategory] = useState('');
     const [dataTitle, setDataTitle] = useState('');
-    const [dataDescription,  setDataDescription] = useState('');
+    const [dataDescription, setDataDescription] = useState('');
     const [dataPrice, setDataPrice] = useState('');
     const [dataBedrooms, setDataBedrooms] = useState('');
     const [dataBathrooms, setDataBathrooms] = useState('');
-    // how many guests to bellowing are householders
     const [dataGuests, setDataGuests] = useState('');
     const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
     const [dataImage, setDataImage] = useState<File | null>(null);
 
-   
     //
     //
 
-    const addPropertymodel =  useAddPropertyModel();
+    const addPropertyModel = useAddPropertyModel();
     const router = useRouter();
+
     //
-    // Set datas 是為了拿取後端設定的資料用的
+    // Set datas
     const setCategory = (category: string) => {
         setDataCategory(category)
     }
 
     const setImage = (event: ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files && event.target.files.length > 0 ) {
+        if (event.target.files && event.target.files.length > 0) {
             const tmpImage = event.target.files[0];
-            setDataImage(tmpImage);
 
+            setDataImage(tmpImage);
         }
     }
 
     //
-    //Submit
+    // SUbmit
+
     const submitForm = async () => {
-        console.log('submit form'); 
-        
-        if  (
+        console.log('submitForm');
+
+        if (
             dataCategory &&
             dataTitle &&
             dataDescription &&
             dataPrice &&
-            dataCountry && 
-            dataImage 
+            dataCountry &&
+            dataImage
         ) {
-
             const formData = new FormData();
             formData.append('category', dataCategory);
             formData.append('title', dataTitle);
             formData.append('description', dataDescription);
-            formData.append('price', dataPrice);
+            formData.append('price_per_night', dataPrice);
             formData.append('bedrooms', dataBedrooms);
             formData.append('bathrooms', dataBathrooms);
             formData.append('guests', dataGuests);
             formData.append('country', dataCountry.label);
-            formData.append('countryCode', dataCountry.value);
+            formData.append('country_code', dataCountry.value);
             formData.append('image', dataImage);
 
-            const response = await apiService.post('/api/properties/create', formData);
+            const response = await apiService.post('/api/properties/create/', formData);
 
-            if (response.successful) {
-                 console.log('SUCCESS :-D');
+            if (response.success) {
+                console.log('SUCCESS :-D');
 
-                 router.push('/')
+                router.push('/');
 
-                 addPropertymodel.close();
+                addPropertyModel.close();
             } else {
                 console.log('Error');
+
+                const tmpErrors: string[] = Object.values(response).map((error: any) => {
+                    return error;
+                })
+
+                setErrors(tmpErrors)
             }
         }
-
     }
-
 
     const content = (
         <>
@@ -265,7 +270,7 @@ const  AddPropertyModel = () => {
 
                     <CustomButton
                         label='Submit'
-                        onClick={() => console.log('Submit')}
+                        onClick={submitForm}
                     />   
                 </>
                 ):null
@@ -276,8 +281,8 @@ const  AddPropertyModel = () => {
     return (
         <>
             <Model
-                isOpen={addPropertymodel.isOpen}
-                close={addPropertymodel.close}
+                isOpen={addPropertyModel.isOpen}
+                close={addPropertyModel.close}
                 label="Add property"
                 content={content}
             />
