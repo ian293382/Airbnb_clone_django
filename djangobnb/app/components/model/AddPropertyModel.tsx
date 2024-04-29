@@ -10,6 +10,10 @@ import Categories from "../addproperty/Category";
 import  useAddPropertyModel from '@/app/hooks/useAddPropertyModel'
 import SelectCountry, {  SelectCountryValue } from "../forms/SelectCountry";
 
+// 負責後台傳遞
+import apiService from "@/app/services/apiService";
+import { useRouter } from "next/navigation"
+
 const  AddPropertyModel = () => {
     //
     //  State 設計新增步驟 int step=1
@@ -25,12 +29,12 @@ const  AddPropertyModel = () => {
     const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
     const [dataImage, setDataImage] = useState<File | null>(null);
 
-
+   
     //
     //
-
 
     const addPropertymodel =  useAddPropertyModel();
+    const router = useRouter();
     //
     // Set datas 是為了拿取後端設定的資料用的
     const setCategory = (category: string) => {
@@ -46,7 +50,45 @@ const  AddPropertyModel = () => {
     }
 
     //
-    //
+    //Submit
+    const submitForm = async () => {
+        console.log('submit form'); 
+        
+        if  (
+            dataCategory &&
+            dataTitle &&
+            dataDescription &&
+            dataPrice &&
+            dataCountry && 
+            dataImage 
+        ) {
+
+            const formData = new FormData();
+            formData.append('category', dataCategory);
+            formData.append('title', dataTitle);
+            formData.append('description', dataDescription);
+            formData.append('price', dataPrice);
+            formData.append('bedrooms', dataBedrooms);
+            formData.append('bathrooms', dataBathrooms);
+            formData.append('guests', dataGuests);
+            formData.append('country', dataCountry.label);
+            formData.append('countryCode', dataCountry.value);
+            formData.append('image', dataImage);
+
+            const response = await apiService.post('/api/properties/create', formData);
+
+            if (response.successful) {
+                 console.log('SUCCESS :-D');
+
+                 router.push('/')
+
+                 addPropertymodel.close();
+            } else {
+                console.log('Error');
+            }
+        }
+
+    }
 
 
     const content = (
