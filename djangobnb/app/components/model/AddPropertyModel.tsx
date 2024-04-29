@@ -8,6 +8,7 @@ import CustomButton from "../forms/CustomButton";
 import Categories from "../addproperty/Category";
 
 import  useAddPropertyModel from '@/app/hooks/useAddPropertyModel'
+import SelectCountry, {  SelectCountryValue } from "../forms/SelectCountry";
 
 const  AddPropertyModel = () => {
     //
@@ -20,7 +21,11 @@ const  AddPropertyModel = () => {
     const [dataBedrooms, setDataBedrooms] = useState('');
     const [dataBathrooms, setDataBathrooms] = useState('');
     // how many guests to bellowing are householders
-    const [dataGuests, setDataGuests] = useState('');         
+    const [dataGuests, setDataGuests] = useState('');
+    const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
+
+    
+
 
     //
     //
@@ -55,7 +60,7 @@ const  AddPropertyModel = () => {
                     />
                 </>
 
-            ) : currentStep == 2 ? (
+            ): currentStep == 2 ? (
                 <>
                     <h2 className="mb-6 text-2xl">Describe your place </h2>
                    
@@ -95,7 +100,7 @@ const  AddPropertyModel = () => {
                         />
                 </>
 
-            ): currentStep == 3 ?(
+            ): currentStep == 3 ? (
                 <>
                     <h2 className="mb-6 text-2xl">Details </h2>
                     <div className="pt-3 pb-6 space-y-4">
@@ -132,7 +137,7 @@ const  AddPropertyModel = () => {
                         <div className="flex-flex-col space-y-2">
                             <label htmlFor="">Maximum Number of Guests</label>
                             <input
-                                type="number"
+                                type="number    "
                                 value={dataGuests}
                                 onChange={(e) => setDataGuests(e.target.value)}
                                 className="w-full p-4 border border-gray-600 rounded-xl"
@@ -157,22 +162,44 @@ const  AddPropertyModel = () => {
                 </>
 
          
-            ): (
-                <p>asdf</p>
-            )}  
+            ): currentStep == 4 ? (
+                <>
+                    <h2 className='mb-6 text-2xl'>Location</h2>
+
+                    <div className='pt-3 pb-6 space-y-4'>
+                        <SelectCountry 
+                            value={dataCountry}
+                            onChange={(value) => setDataCountry(value as SelectCountryValue)}
+                        />
+                    </div>
+
+                    <CustomButton
+                        label='Previous'
+                        className='mb-2 bg-black hover:bg-gray-800'
+                        onClick={() => setCurrentStep(3)}
+                    />
+
+                    <CustomButton
+                        label='Next'
+                        onClick={() => setCurrentStep(5)}
+                    />
+                </>
+       
+                ):null
+            }
         
         </>
     )
-    return(
+    return (
         <>
-            <Model 
+            <Model
                 isOpen={addPropertymodel.isOpen}
                 close={addPropertymodel.close}
                 label="Add property"
                 content={content}
             />
         </>
-    ) 
+    )
 }
 
 export default AddPropertyModel;
