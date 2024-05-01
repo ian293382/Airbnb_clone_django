@@ -13,9 +13,9 @@ then
     echo "The database is up and running :-D"
 fi
 
-# 執行 Django 遷移
+# 執行 Django 資料庫遷移 不然每次都得關機migrateions 不如打上去讓他主動偵查
 python manage.py makemigrations
 python manage.py migrate
 
-# 執行傳遞給腳本的命令
+# 執行額外的命令
 exec "$@"

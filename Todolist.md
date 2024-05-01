@@ -42,7 +42,7 @@
         +  npm install world-countries [v]
     + APi endpoints [v]
     + Send data  [v]
-
+//////////////////// 4/30 0:23
 + Detail page for properties
 + Book property
 + Land lord page dynamic
