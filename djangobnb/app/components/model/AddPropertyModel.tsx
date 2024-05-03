@@ -82,7 +82,7 @@ const AddPropertyModel = () => {
                 console.log('SUCCESS :-D');
 
                 router.push('/');
-
+                window.location.reload();
                 addPropertyModel.close();
             } else {
                 console.log('Error');
