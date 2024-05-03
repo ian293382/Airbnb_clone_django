@@ -29,5 +29,5 @@ class PropertiesDetailSerializer(serializers.ModelSerializer):
             'country_code',
             'category',
             'image_url',
-            'landlord',
+            'landlord'
         )
