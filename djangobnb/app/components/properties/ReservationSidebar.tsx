@@ -3,8 +3,8 @@ const ReservationSidebar = () => {
         <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
             <h2 className="mb-5 text-2xl">$ 200 per might</h2>
 
-            <div className="mb-6 p-3 border-border-gray-400 rounded-xl">
-                <label htmlFor="" className="mb-2 block font-bold text-xs">Guests</label>
+            <div className="mb-6 p-3 border border-gray-400 rounded-xl">
+                <label htmlFor="" className="mb-2 block font-bold text-ml">Guests</label>
                 <select className="w-full -ml-1 text-xm" name="Guests" id="">
                     <option value="">1</option>
                     <option value="">2</option>
