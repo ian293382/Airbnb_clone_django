@@ -13,7 +13,7 @@ const PropertyDetailPage = async ({params}: {params: {id: string}}) => {
       
     return (
         <main className="max-w-[1500px] max-auto px-6 pb-6">
-            <div className="w-[100] h-[180vh] mb-4 overflow-hidden rounded-xl relative">
+            <div className="w-[100] h-[100vh] mb-4 overflow-hidden rounded-xl relative">
                 <Image 
                     fill
                     src={property.data.image_url}
