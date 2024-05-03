@@ -51,7 +51,7 @@ const AddPropertyModel = () => {
     }
 
     //
-    // SUbmit
+    // Submit 一個一個資料接上
 
     const submitForm = async () => {
         console.log('submitForm');
