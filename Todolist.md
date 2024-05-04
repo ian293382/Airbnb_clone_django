@@ -43,8 +43,9 @@
     + APi endpoints [v]
     + Send data  [v]
 //////////////////// 4/30 0:23
-+ Detail page for properties
++ Detail page for properties [v]
 + Book property
+    + npm install react-date-range [v] (start_date and end_date need)
 + Land lord page dynamic
 + My properties dynamic
 + My reservations dynamic
