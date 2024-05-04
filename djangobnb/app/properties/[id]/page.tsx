@@ -3,13 +3,15 @@ import ReservationSidebar from "@/app/components/properties/ReservationSidebar"
 import React from "react";
 
 import apiService from "@/app/services/apiService";
+import { getUserId } from "@/app/lib/actions";
 
 
 const PropertyDetailPage = async ({params}: {params: {id: string}}) => {
     const property = await apiService.get(`/api/properties/${params.id}`)
     // 在後端上我是並不是直接回傳一個值 而是回傳一個物件 所以  property =>{ data: {}}
     // 如果你想獲得值 不能寫 property.title 而是 property.data.title
-// const PropertyDetailPage =  () => { // 之前靜態頁面寫法切換可以看比較    
+
+    const userId = await getUserId();
       
     return (
         <main className="max-w-[1500px] max-auto px-6 pb-6">
@@ -48,7 +50,7 @@ const PropertyDetailPage = async ({params}: {params: {id: string}}) => {
                     </div>
                     <hr />
 
-                    <p className="mt-6 text-lg flex justify-center">
+                    <p className="mt-6 text-lg flex justify-start">
                      {property.data.description}
                     </p>
                 </div>
@@ -56,6 +58,7 @@ const PropertyDetailPage = async ({params}: {params: {id: string}}) => {
            
                 <ReservationSidebar
                     property={property.data}
+                    userId={userId}
                 />
           
             </div>
