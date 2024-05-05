@@ -32,8 +32,8 @@ class PropertiesDetailSerializer(serializers.ModelSerializer):
             'landlord'
         )
 
-class ReservationsListSerializer(serializers.Model):
-    property = PropertiesListSerializer(readonly=True, many=False)
+class ReservationsListSerializer(serializers.ModelSerializer):
+    property = PropertiesListSerializer(read_only=True, many=False)
     class Meta:
         model = Reservation
         fields = (
