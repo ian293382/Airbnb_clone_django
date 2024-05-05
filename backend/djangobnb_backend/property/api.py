@@ -22,7 +22,7 @@ def properties_list(request):
 @authentication_classes([])
 @permission_classes([])
 def property_reservations(request, pk):
-    properties = Property.objects.get(pk=pk)
+    property = Property.objects.get(pk=pk)
     reservations = property.reservations.all()
 
     serializer = ReservationsListSerializer(reservations, many=True)
