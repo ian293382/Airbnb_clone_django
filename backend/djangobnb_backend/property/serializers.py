@@ -31,7 +31,6 @@ class PropertiesDetailSerializer(serializers.ModelSerializer):
             'image_url',
             'landlord'
         )
-
 class ReservationsListSerializer(serializers.ModelSerializer):
     property = PropertiesListSerializer(read_only=True, many=False)
     class Meta:
