@@ -17,6 +17,7 @@ def properties_list(request):
         'data': serializer.data
         })
 
+
 @api_view(['GET'])
 @authentication_classes([])
 @permission_classes([])
@@ -26,7 +27,7 @@ def property_reservations(request, pk):
 
     serializer = ReservationsListSerializer(reservations, many=True)
 
-    return JsonResponse(serializer.data)
+    return JsonResponse(serializer.data, safe=False)
 
 @api_view(['GET'])
 @authentication_classes([])
@@ -56,6 +57,7 @@ def create_property(request):
 @api_view(['POST'])
 def book_property(request, pk):
     try:
+        
         start_date = request.POST.get('start_date', '')
         end_date = request.POST.get('end_date', '')
         number_of_nights = request.POST.get('number_of_nights', '')
