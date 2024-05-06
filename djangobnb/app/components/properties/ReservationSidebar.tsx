@@ -138,7 +138,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
             <DatePicker
                 value={dateRange}
                 bookedDates={bookedDates}
-                onChange={(value) => _setDateRange(value.selection)}
+                onChange={(value: { selection: any; }) => _setDateRange(value.selection)}
             />
 
             <div className="mb-6 p-3 border border-gray-400 rounded-xl">
