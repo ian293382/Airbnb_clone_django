@@ -8,7 +8,6 @@ import LogoutButton from "../LogoutButton";
 import useLoginModel from "@/app/hooks/useLoginModel";
 import useSignupModel from "@/app/hooks/useSignupModel";
 import { useRouter } from "next/navigation";
-import { useRouter } from "next/navigation";
 
 interface UserNavProps {
     userId?: string | null;
@@ -17,7 +16,6 @@ interface UserNavProps {
 const UserNav: React.FC<UserNavProps> = ({
     userId
 }) => {
-    const router = useRouter()
     const router = useRouter()
     const loginModel = useLoginModel();
     const signupModel = useSignupModel();
@@ -51,7 +49,6 @@ const UserNav: React.FC<UserNavProps> = ({
                                     router.push(`/myproperties`)
                                 }}
                             />
-
                             <MenuLink
                                 label="My reservations"
                                 onClick= {()=> {
@@ -59,7 +56,7 @@ const UserNav: React.FC<UserNavProps> = ({
                                     router.push(`/myreservations`)
                                 }}
                             />
-                        
+
                             <LogoutButton />
                         </>
                       
