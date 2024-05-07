@@ -4,9 +4,10 @@ import {useState, useEffect} from  'react';
 import { Range } from 'react-date-range';
 import { differenceInDays, eachDayOfInterval, format} from 'date-fns';
 import Decimal from 'decimal.js';
-import DatePicker from '../forms/Calendar';
+
 import apiService from '@/app/services/apiService';
 import useLoginModel from '@/app/hooks/useLoginModel';
+import DatePicker from '../forms/Calendar';
 
 const initialDateRange = {
     startDate: new Date(),
@@ -138,7 +139,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
             <DatePicker
                 value={dateRange}
                 bookedDates={bookedDates}
-                onChange={(value: { selection: any; }) => _setDateRange(value.selection)}
+                onChange={(value) => _setDateRange(value.selection)}
             />
 
             <div className="mb-6 p-3 border border-gray-400 rounded-xl">
