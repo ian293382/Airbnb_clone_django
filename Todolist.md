@@ -47,7 +47,7 @@
 + Book property
     + => npm i --save-dev @types/react-date-range [v] (start_date and end_date need)
     + =>  npm install decimal.js [v] (solve price decimal_place) 
-+ Land lord page dynamic
++ Land lord page dynamic [v]
 + My properties dynamic
 + My reservations dynamic
 + make ot possible to set property as favorite 
