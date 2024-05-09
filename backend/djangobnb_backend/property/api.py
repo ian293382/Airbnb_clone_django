@@ -30,8 +30,15 @@ def properties_list(request):
     #
     #filter
 
+    is_favorites = request.GET.get('is_favorite', '')
+
     if landlord_id:
         properties = properties.filter(landlord_id=landlord_id)
+
+    # favorite__in=(user) fro,:models favorite == true
+    if is_favorites:
+        properties = properties.filter(favorite__in=[user])
+
     #
     # favorite
     if user:
@@ -123,4 +130,4 @@ def toggle_favorite(request, pk):
     else:
         property.favorite.add(request.user)
 
-        return JsonResponse({'is_favorite': True})
+        return JsonResponse({'is_favorite': True}) 
