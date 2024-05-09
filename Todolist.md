@@ -50,7 +50,7 @@
 + Land lord page dynamic [v]
 + My properties dynamic [v]
 + My reservations dynamic [v]
-+ make ot possible to set property as favorite 
++ make ot possible to set property as favorite [v]
 + My favorite page (with listings)
 + Make conversation dynamic
 
