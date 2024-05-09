@@ -51,8 +51,8 @@
 + My properties dynamic [v]
 + My reservations dynamic [v]
 + make ot possible to set property as favorite [v]
-+ My favorite page (with listings)
-+ Make conversation dynamic
++ My favorite page (with listings) [x]
++ Make conversation dynamic 
 
 + Set up Web socket in the backend
 + make it possible to connect
