@@ -46,7 +46,7 @@ const UserNav: React.FC<UserNavProps> = ({
                                 label="Inbox"
                                 onClick= {()=> {
                                     setIsOpen(false);
-                                    router.push(`/Inbox`)
+                                    router.push(`/inbox`)
                                 }}
                             />
 
