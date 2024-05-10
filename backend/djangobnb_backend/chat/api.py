@@ -7,6 +7,6 @@ from .serializers import ConservationListSerializer
 
 @api_view(['GET'])
 def conversation_list(request):
-    serializer = ConservationListSerializer(request.user.conservations.all(), many=True)
+    serializer = ConservationListSerializer(request.user.conversations.all(), many=True)
 
-    return JsonResponse(serializer.data)
+    return JsonResponse(serializer.data, safe=False)
