@@ -4,7 +4,7 @@ from .models import Conversation, ConversationMessage
 
 from useraccount.serializers import UserDetailSerializer
 
-class ConservationListSerializer(serializers.ModelSerializer):
+class ConversationListSerializer(serializers.ModelSerializer):
     users = UserDetailSerializer(many=True, read_only=True)
 
     class Meta:
