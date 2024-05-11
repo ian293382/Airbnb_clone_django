@@ -56,6 +56,9 @@
 
 + Set up Web socket in the backend
     + Installing software 
+    + Configuration
+    + Set up basic consumers
+    + Set up routing
 + make it possible to connect
 + Send/receive message
 + Store and  load message
