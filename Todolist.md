@@ -55,11 +55,13 @@
 + Make conversation dynamic [v]
 
 + Set up Web socket in the backend
-    + Installing software 
+    + Installing software (channels, daphne)
     + Configuration
     + Set up basic consumers
     + Set up routing
 + make it possible to connect
+    +  npm install react-use-websocket (check: cat package.json)
+    + npm install socket.io socket.io-client
 + Send/receive message
 + Store and  load message
 + Start new conversation
