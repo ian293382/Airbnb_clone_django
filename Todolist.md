@@ -52,9 +52,10 @@
 + My reservations dynamic [v]
 + make ot possible to set property as favorite [v]
 + My favorite page (with listings) [x]
-+ Make conversation dynamic 
++ Make conversation dynamic [v]
 
 + Set up Web socket in the backend
+    + Installing software 
 + make it possible to connect
 + Send/receive message
 + Store and  load message
