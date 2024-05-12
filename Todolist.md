@@ -52,13 +52,19 @@
 + My reservations dynamic [v]
 + make ot possible to set property as favorite [v]
 + My favorite page (with listings) [x]
-+ Make conversation dynamic 
++ Make conversation dynamic [v]
 
-+ Set up Web socket in the backend
-+ make it possible to connect
-+ Send/receive message
-+ Store and  load message
-+ Start new conversation
++ Set up Web socket in the backend [v]
+    + Installing software (channels, daphne) [v]
+    + Configuration [v]
+    + Set up basic consumers [v]
+    + Set up routing [v]
++ make it possible to connect [v]
+    +  npm install react-use-websocket (check: cat package.json) [v]
+    + npm install socket.io socket.io-client [v]
++ Send/receive message   [v]
++ Store and  load message [v]
++ Start new conversation [v]
 
 + Set up search filters
     + Model for search filter

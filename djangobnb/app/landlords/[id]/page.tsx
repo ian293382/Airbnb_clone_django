@@ -23,9 +23,12 @@ const LandlordDetailPage = async({ params }: {params: {id: string }}) => {
                         alt="Landlord name"
                     />
 
-                    <h1 className="mt-6 text-2xl">Landlord name</h1>
+                    <h1 className="mt-6 text-2xl">{landlord.name}</h1>
                     {userId != params.id && (
-                        <ContactButton />
+                        <ContactButton
+                            userId={userId}
+                            landlordId={params.id} // 由使用者點擊 request而來
+                            />
                     )}
                       
                    </div>

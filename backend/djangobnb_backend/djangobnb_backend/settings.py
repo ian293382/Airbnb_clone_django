@@ -89,7 +89,8 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 
     'corsheaders',
-
+   
+    'chat',
     'property',
     'useraccount',
 ]
@@ -125,6 +126,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangobnb_backend.wsgi.application'
 ASGI_APPLICATION = 'djangobnb_backend.asgi.application'
+
 
 
 # Database
