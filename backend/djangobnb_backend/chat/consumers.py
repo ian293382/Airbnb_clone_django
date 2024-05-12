@@ -24,12 +24,13 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         await self.accept()
 
-
     async def disconnect(self):
-        await self.channel_layer.group_disconnect(
+        # Leave room
+
+        await self.channel_layer.group_discard(
             self.room_group_name,
             self.channel_name
-        ) 
+        )
 
     # Receive message from web sockets
     async def receive(self, text_data):
@@ -51,7 +52,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
         await self.save_message(conversation_id, body, sent_to_id)
 
-        # Send messages
+    # Sending messages
     async def chat_message(self, event):
         body = event['body']
         name = event['name']
@@ -60,6 +61,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'body': body,
             'name': name
         }))
+
     @sync_to_async
     def save_message(self, conversation_id, body, sent_to_id):
         user = self.scope['user']

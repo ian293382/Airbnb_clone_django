@@ -62,9 +62,9 @@
 + make it possible to connect [v]
     +  npm install react-use-websocket (check: cat package.json) [v]
     + npm install socket.io socket.io-client [v]
-+ Send/receive message
-+ Store and  load message
-+ Start new conversation
++ Send/receive message   [v]
++ Store and  load message [v]
++ Start new conversation [v]
 
 + Set up search filters
     + Model for search filter
