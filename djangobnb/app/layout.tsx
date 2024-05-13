@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import LoginModel from "./components/model/LoginModel";
+import SearchModel from "./components/model/SearchModel";
 import SignupModel from "./components/model/SignupModel";
 import AddPropertyModel from "./components/model/AddPropertyModel"; 
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           {children}
         </div>
       <LoginModel />
+      <SearchModel />
       <SignupModel />
       <AddPropertyModel />
     </body>
