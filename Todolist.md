@@ -67,10 +67,10 @@
 + Start new conversation [v]
 
 + Set up search filters
-    + Model for search filter
-    + Country search filter
-    + Calendar fo check in / check out dates
-    + Search details(number of guests, bedrooms, etc)
+    + Model for search filter  [v]
+    + Country search filter  [v]
+    + Calendar fo check in / check out dates  [v]
+    + Search details(number of guests, bedrooms, etc)  [v]
     + API endpoint
     + Choose between categories on the front page
 
