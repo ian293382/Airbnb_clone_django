@@ -70,8 +70,31 @@ const SearchModel = () => {
                 />
 
                 <CustomButton 
-                    label="Check in date ->"
+                    label="Check out date ->"
                     onClick={() =>  searchModel.open('checkout')}
+                />
+
+            </div>
+
+        </>
+    )
+    
+    const contentCheckout = (
+        <>
+            <h2 className="mb-6 text-2xl">When do you want to check out?</h2>
+            <DatePicker
+                value={dateRange}
+                onChange={(value) => _setDateRange(value.selection)}
+            />
+            <div className="mt-6 flex flex-row gap-4">
+                <CustomButton 
+                    label="Check in date ->"
+                    onClick={() =>  searchModel.open('checkin')}
+                />
+
+                <CustomButton 
+                    label="Detail ->"
+                    onClick={() =>  searchModel.open('details')}
                 />
 
             </div>
@@ -83,8 +106,9 @@ const SearchModel = () => {
         content = contentLocation;
     }  else if (searchModel.step == 'checkin') {
         content = contentCheckin;
+    }  else if (searchModel.step == 'checkout') {
+        content = contentCheckout;
     }
-
 
     return (
         <Model
