@@ -81,7 +81,7 @@ const AddPropertyModel = () => {
             if (response.success) {
                 console.log('SUCCESS :-D');
 
-                router.push('/');
+                router.push('/?added=true');
                 window.location.reload();
                 addPropertyModel.close();
             } else {

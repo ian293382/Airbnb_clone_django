@@ -22,15 +22,41 @@ def properties_list(request):
     except Exception as e:
         user = None
 
+    #
+    #
+
     favorites = []
     properties = Property.objects.all()
 
-    landlord_id = request.GET.get('landlord_id', '')
-
     #
-    #filter
+    #filter 與前端對接
 
     is_favorites = request.GET.get('is_favorites', '')
+    landlord_id = request.GET.get('landlord_id', '')
+
+    country = request.GET.get('country', '')
+    category = request.GET.get('category', '')
+    checkin_date = request.GET.get('checkin_data', '')
+    checkout_date = request.GET.get('checkout_data', '')
+    bedrooms = request.GET.get('numBedrooms', '')
+    guests =  request.GET.get('numGuests', '')
+    bathrooms = request.GET.get('numBathrooms', '')
+
+    if checkin_date :
+        
+        # check in date 情況: 
+        # 1.正好匹配 （起始日期跟最終日期）
+        # 2. 部分匹配(  起始日期 < 該日期 (比起始晚 已經在住了),  該日期>最終日期 (比最終晚))  
+        exact_matches = Reservation.objects.filter(start_date=checkin_date) | Reservation.objects.filter(end_date=checkout_date)
+       
+        overlap_matches = Reservation.objects.filter(start_date__lte=checkout_date, end_date__gte=checkout_date)
+
+        all_matches = []
+        for reservation in exact_matches | overlap_matches :
+            all_matches.append(reservation.property_id)
+        
+        property = properties.exclude(id__in=all_matches)
+
 
     if landlord_id:
         properties = properties.filter(landlord_id=landlord_id)
@@ -38,7 +64,21 @@ def properties_list(request):
     # favorite__in=(user) fro,:models favorite == true
     if is_favorites:
         properties = properties.filter(favorite__in=[user])
+    # https://docs.djangoproject.com/en/4.0/ref/models/querysets/#gte
+    if guests:
+        properties = properties.filter(guests__gte=guests)
 
+    if bedrooms:
+        properties = properties.filter(bedrooms__gte=bedrooms)
+
+    if bathrooms:
+        properties = properties.filter(bathrooms__gte=bathrooms)
+    
+    if country: 
+        properties = properties.filter(country=country)
+    
+    if category and category !='undefined':
+        properties = properties.filter(category=category)
     #
     # favorite
     if user:
