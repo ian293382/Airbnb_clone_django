@@ -13,6 +13,7 @@ class PropertyForm(ModelForm):
             'bathrooms',
             'guests',
             'image',
+            'category',
             'country',
             'country_code',
         )
