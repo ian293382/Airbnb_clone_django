@@ -1,9 +1,9 @@
 import { create } from 'zustand';
 
 export type SearchQuery = {
-    country: string;
-    checkIn: Date | null;
-    checkout: Date | null;
+    country: string| undefined;
+    checkIn: Date | undefined;
+    checkOut: Date | undefined;
     guests: number;
     bathrooms: Number;
     bedrooms: Number;
@@ -27,8 +27,8 @@ const useLoginModel= create<SearchModelStore>((set) => ({
     setQuery: (query: SearchQuery) => set({ query: query }),
     query: {
         country:'',
-        checkIn: null,
-        checkout: null,
+        checkIn: undefined,
+        checkOut: undefined,
         guests: 1,
         bedrooms: 0,
         bathrooms: 0,

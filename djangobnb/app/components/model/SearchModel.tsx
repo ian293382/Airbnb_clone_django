@@ -5,7 +5,7 @@ import { useState } from "react";
 import  Calendar from '../forms/Calendar'
 import { Range } from 'react-date-range';
 import CustomButton from "../forms/CustomButton";
-import useSearchModel from "@/app/hooks/useSearchModel";
+import useSearchModel, { SearchQuery } from "@/app/hooks/useSearchModel";
 import SelectCountry, { SelectCountryValue } from "../forms/SelectCountry";
 import DatePicker from "../forms/Calendar";
 
@@ -28,6 +28,18 @@ const SearchModel = () => {
     //
 
     const closeAndSearch = () => {
+        const newSearchQuery: SearchQuery = {
+            country: country?.label,
+            checkIn: dateRange.startDate,
+            checkOut: dateRange.endDate,
+            guests: parseInt(numGuests),
+            bedrooms: parseInt(numBedrooms),
+            bathrooms: parseInt(numBathrooms),
+            category: ''
+        }
+        // 下面這行函數來自 interface interface SearchModelStore....
+        searchModel.setQuery(newSearchQuery)  
+
         searchModel.close();
     }
     
