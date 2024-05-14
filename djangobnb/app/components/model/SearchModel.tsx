@@ -18,8 +18,18 @@ const initialDateRange = {
 const SearchModel = () => {
     let content = (<></>);
     const searchModel = useSearchModel();
+    const [numGuests, setNumGuests] = useState<string>('1');
+    const [numBedrooms, setNumBedrooms] = useState<string>('0');
+    const [numBathrooms, setNumBathrooms] = useState<string>('0');
     const [dateRange, setDateRange]= useState<Range>(initialDateRange);
     const [country, setCountry]= useState<SelectCountryValue>();
+    
+    //
+    //
+
+    const closeAndSearch = () => {
+        searchModel.close();
+    }
     
     //
     // Set date range
@@ -88,7 +98,7 @@ const SearchModel = () => {
             />
             <div className="mt-6 flex flex-row gap-4">
                 <CustomButton 
-                    label="Check in date ->"
+                    label="<- Check in date"
                     onClick={() =>  searchModel.open('checkin')}
                 />
 
@@ -102,12 +112,77 @@ const SearchModel = () => {
         </>
     )
 
+    const contentDetails = (
+        <>
+            <h2 className="mb-6 text-2xl">Details</h2>
+
+            <div className="space-y-4">
+                <div className="space-y-4">
+                    <label htmlFor="">Number of guests:</label>
+                    <input 
+                        type="number"
+                        min='1'
+                        value={numGuests}
+                        onChange={(e) => setNumGuests(e.target.value)}
+                        placeholder="Number of guests..."
+                        className="w-full h-14 px-4 border border-gray-300 rounded-xl"
+                    />
+                </div>
+            </div>
+
+            <div className="space-y-4">
+                <div className="space-y-4">
+                    <label htmlFor="">Number of bedrooms:</label>
+                    <input 
+                        type="number"
+                        min='0'
+                        value={numBedrooms}
+                        onChange={(e) => setNumBedrooms(e.target.value)}
+                        placeholder="Number of bedrooms..."
+                        className="w-full h-14 px-4 border border-gray-300 rounded-xl"
+                    />
+                </div>
+            </div>
+
+            <div className="space-y-4">
+                <div className="space-y-4">
+                    <label htmlFor="">Number of Bathrooms:</label>
+                    <input 
+                        type="number"
+                        min='0'
+                        value={numBathrooms}
+                        onChange={(e) => setNumBathrooms(e.target.value)}
+                        placeholder="Number of bathrooms..."
+                        className="w-full h-14 px-4 border border-gray-300 rounded-xl"
+                    />
+                </div>
+            </div>
+
+          
+            <div className="mt-6 flex flex-row gap-4">
+                <CustomButton 
+                    label="<- Check out date "
+                    onClick={() =>  searchModel.open('checkout')}
+                />
+
+                <CustomButton 
+                    label="Search ->"
+                    onClick={closeAndSearch}
+                />
+
+            </div>
+
+        </>
+    )
+
     if (searchModel.step == 'location') {
         content = contentLocation;
     }  else if (searchModel.step == 'checkin') {
         content = contentCheckin;
     }  else if (searchModel.step == 'checkout') {
         content = contentCheckout;
+    } else if (searchModel.step == 'details') {
+        content = contentDetails;
     }
 
     return (
