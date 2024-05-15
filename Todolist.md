@@ -66,8 +66,6 @@
 + Store and  load message [v]
 + Start new conversation [v]
 
-+ Refresh front page automatically
-
 + Set up search filters
     + Model for search filter  [v]
     + Country search filter  [v]
@@ -76,7 +74,7 @@
     + API endpoint  [v]
     + Choose between categories on the front page  [v]
 
-+  Refresh front page automatically
++  Refresh front page automatically 
 
 + Deployment 
     + Create server on GCP set it up 
