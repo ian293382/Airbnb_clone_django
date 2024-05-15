@@ -81,7 +81,7 @@ const AddPropertyModel = () => {
             if (response.success) {
                 console.log('SUCCESS :-D');
 
-                router.push('/?added=true');
+                router.push('/?added=true'); // automatically fresh
                 window.location.reload();
                 addPropertyModel.close();
             } else {
