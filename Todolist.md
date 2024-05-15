@@ -78,10 +78,10 @@
 +  Fix the refresh token [v]
 
 + Deployment 
-    + Create server on GCP set it up 
+    + Create server on digital ocean set it up 
     + Backend 
         + Create environment
-        + Get code form git 
+        + Get code form git   [v]
         + Rest of server stuff
     + Frontend 
         + Node,nginx
