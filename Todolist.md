@@ -74,7 +74,8 @@
     + API endpoint  [v]
     + Choose between categories on the front page  [v]
 
-+  Refresh front page automatically 
++  Refresh front page automatically [v]
++  Fix the refresh token [v]
 
 + Deployment 
     + Create server on GCP set it up 
