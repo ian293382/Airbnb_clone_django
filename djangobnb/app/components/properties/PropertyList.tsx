@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import PropertyListItem from "./PropertyListitem";
+import { useSearchParams } from 'next/navigation';
 import apiService from '@/app/services/apiService';
 import useSearchModel from '@/app/hooks/useSearchModel';
 import { format } from 'date-fns';
@@ -23,6 +24,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
     landlord_id,
     favorites
 }) => {
+    const params = useSearchParams();
     const searchModel = useSearchModel();
     const country = searchModel.query.country;
     const numGuests = searchModel.query.guests;
@@ -114,7 +116,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
 
     useEffect(() => {
         getProperties();
-    }, [category, searchModel.query]);
+    }, [category, searchModel.query, params]);
 
     return (
         <>

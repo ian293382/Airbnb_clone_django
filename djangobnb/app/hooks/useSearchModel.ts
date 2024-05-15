@@ -19,7 +19,7 @@ interface SearchModelStore {
     setQuery: (query: SearchQuery) => void;
 }
 
-const useLoginModel= create<SearchModelStore>((set) => ({
+const useSearchModel= create<SearchModelStore>((set) => ({
     isOpen: false,
     step: '',
     open: (step) => set({ isOpen: true, step: step }),
@@ -36,4 +36,4 @@ const useLoginModel= create<SearchModelStore>((set) => ({
     }
 }))
 
-export default useLoginModel;
+export default useSearchModel;
